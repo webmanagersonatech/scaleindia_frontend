@@ -96,7 +96,7 @@ export default async  function HomePage() {
 
       <CallToActionSection
         bgColor='bg-yellow-500'
-        heading='Ready to Transform Your Careerss?'
+        heading='Ready to Transform Your Career?'
         description='Join our tech-driven business school designed to shape innovators, leaders, and global achievers.'
         cta1="Apply for admission"
         cta2="Schedule a campus visit"

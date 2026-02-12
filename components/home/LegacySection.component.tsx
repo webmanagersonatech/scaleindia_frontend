@@ -17,9 +17,10 @@ export default function LegacySection() {
       title: "Sona Towers",
       description:
         "Establishing educational excellence with world-class infrastructure and innovative learning environments.",
-      image: "/images/sona-Towers-it-revolution.webp",
+      image: "/images/sona-tower-it-revolution.webp",
       icon: <DownloadIcon weight='bold' className='w-8 h-8 text-white' />,
     },
+
     {
       id: 3,
       title: "ISRO Collaboration",

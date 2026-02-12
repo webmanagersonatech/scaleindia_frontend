@@ -40,7 +40,7 @@ export default function AboutMilestoneSection() {
         `With cutting-edge servers, high-speed connectivity, and cloud computing capabilities, Sona Towers enables seamless digital learning experiences, virtual laboratories, and collaborative research projects that connect our students and faculty with global academic communities.`,
         `The Towers serves as the nerve center for our digital transformation initiatives, supporting everything from AI-powered learning analytics to virtual reality classrooms, ensuring our students are prepared for the digital economy of tomorrow.`,
       ],
-      image: "/images/sona-Towers-it-revolution.webp",
+      image: "/images/sona-tower-it-revolution.webp",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
