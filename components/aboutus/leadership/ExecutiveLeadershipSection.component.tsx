@@ -18,14 +18,14 @@ export default function ExecutiveLeadershipSection() {
       description:
         "",
     },
-    {
-      id: 3,
-      image: "/images/nt_srinivasalu.webp",
-      name: "N. T. Srinivasulu",
-      designation: "Dean – MBA Admissions ",
-      description:
-        "",
-    },
+    // {
+    //   id: 3,
+    //   image: "/images/nt_srinivasalu.webp",
+    //   name: "N. T. Srinivasulu",
+    //   designation: "Dean – MBA Admissions ",
+    //   description:
+    //     "",
+    // },
     {
       id: 4,
       image: "/images/akhil.webp",
@@ -42,7 +42,7 @@ export default function ExecutiveLeadershipSection() {
       description:
         "",
     },
-    
+
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function ExecutiveLeadershipSection() {
         {/* Section Heading */}
         <div className="mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-2">
-             SCALE <span className="text-yellow-500">Leadership Team</span>
+            SCALE <span className="text-yellow-500">Leadership Team</span>
           </h2>
           <div className="w-20 h-[2px] bg-yellow-500 mx-auto mb-4"></div>
           {/* <p className="text-gray-600 max-w-3xl mx-auto">
