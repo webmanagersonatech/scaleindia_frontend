@@ -19,7 +19,7 @@ export default function LifeAtScaleSection() {
     { id: 5, src: "/images/life-9.webp", alt: "Leadership & Global Exposure", title: "Leadership & Global Exposure", subtitle: "Global exposure and leadership experiences that build confident professionals.", height: "h-[240px]" },
     { id: 6, src: "/images/life-10.webp", alt: "Career Acceleration & Enterprise Connectports Event", title: "Career Acceleration & Enterprise Connect", subtitle: "Internships, industry connect, and strong placement support.", height: "h-[300px]" },
     { id: 7, src: "/images/img2.webp", alt: "Student Discussion", title: "Student Interaction", subtitle: "Collaborative academic experiences", height: "h-[260px]" },
-    { id: 8, src: "/images/img4.webp", alt: "Cultural Dance", title: "Cultural Fest", subtitle: "Celebrating art, culture and unity", height: "h-[200px]" },
+    { id: 8, src: "/images/life-15.webp", alt: "Cultural Dance", title: "Cultural Fest", subtitle: "Celebrating art, culture and unity", height: "h-[200px]" },
   ];
 
   return (
