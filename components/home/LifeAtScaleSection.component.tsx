@@ -13,11 +13,11 @@ import Autoplay from "embla-carousel-autoplay";
 export default function LifeAtScaleSection() {
   const images = [
     { id: 1, src: "/images/life-1.webp", alt: "Campus Celebration", title: "Cultural Festivals", subtitle: "Celebrating diversity through vibrant cultural events", height: "h-[200px]" },
-    { id: 2, src: "/images/img1.webp", alt: "Students Collaboration", title: "Collaborative Learning", subtitle: "Teamwork and creativity at SCALE", height: "h-[260px]" },
+    { id: 2, src: "/images/life-12.webp", alt: "Students Collaboration", title: "Collaborative Learning", subtitle: "Teamwork and creativity at SCALE", height: "h-[260px]" },
     { id: 3, src: "/images/mba-tead-classroom.webp", alt: "Seminar and Workshop", title: "Workshops & Seminars", subtitle: "Learning beyond classrooms", height: "h-[280px]" },
     { id: 4, src: "/images/life-4.webp", alt: "Classroom Learning", title: "Classroom Learning", subtitle: "Interactive and engaging education", height: "h-[260px]" },
-    { id: 5, src: "/images/life-5.webp", alt: "Graduation Ceremony", title: "Sports Day", subtitle: "Celebrating student achievements", height: "h-[240px]" },
-    { id: 6, src: "/images/img3.webp", alt: "Sports Event", title: "Sports & Fitness", subtitle: "Building champions and teamwork", height: "h-[300px]" },
+    { id: 5, src: "/images/life-9.webp", alt: "Leadership & Global Exposure", title: "Leadership & Global Exposure", subtitle: "Global exposure and leadership experiences that build confident professionals.", height: "h-[240px]" },
+    { id: 6, src: "/images/life-10.webp", alt: "Career Acceleration & Enterprise Connectports Event", title: "Career Acceleration & Enterprise Connect", subtitle: "Internships, industry connect, and strong placement support.", height: "h-[300px]" },
     { id: 7, src: "/images/img2.webp", alt: "Student Discussion", title: "Student Interaction", subtitle: "Collaborative academic experiences", height: "h-[260px]" },
     { id: 8, src: "/images/img4.webp", alt: "Cultural Dance", title: "Cultural Fest", subtitle: "Celebrating art, culture and unity", height: "h-[200px]" },
   ];
@@ -61,11 +61,13 @@ export default function LifeAtScaleSection() {
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500"></div>
 
-                    {/* Text */}
-                    <div className="absolute bottom-0 left-0 p-5 text-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    {/* Text - Center */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white 
+opacity-0 group-hover:opacity-100 transition-all duration-500 text-center px-4">
                       <h3 className="font-semibold text-lg">{img.title}</h3>
                       <p className="text-sm text-gray-200">{img.subtitle}</p>
                     </div>
+
                   </div>
                 </CarouselItem>
               ))}
@@ -97,10 +99,13 @@ export default function LifeAtScaleSection() {
 
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500"></div>
 
-                <div className="absolute bottom-0 left-0 p-5 text-white opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                {/* Text - Center */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white 
+opacity-0 group-hover:opacity-100 transition-all duration-500 text-center px-4">
                   <h3 className="font-semibold text-lg">{img.title}</h3>
                   <p className="text-sm text-gray-200">{img.subtitle}</p>
                 </div>
+
               </div>
             ))}
           </div>
