@@ -33,9 +33,9 @@ export default function ShortsSection({ shorts }: Props) {
     //     "5V-VPd-xkSE",
     //     "fG_pUIHUlKQ",
     // ];
-console.log(shorts,"shorts")
+    console.log(shorts, "shorts")
 
-
+    const baseUrl = (process.env.NEXT_PUBLIC_STRAPI_URL || "https://admin.scaleindia.in").replace(/\/$/, "");
     return (
         <section className="relative bg-gray-100 text-gray-900 py-24 overflow-hidden">
 
@@ -63,17 +63,16 @@ console.log(shorts,"shorts")
 
                         <div className="flex -space-x-3">
                             {shorts
-                                ?.filter((item: IShort) => item.isActive)
+                                ?.filter((item) => item.isActive)
                                 .slice(0, 4)
-                                .map((item: IShort) => {
-                                    // Base URL for Strapi thumbnails
-                                    const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "https://admin.scaleindia.in/";
-
+                                .map((item) => {
                                     // Use Strapi thumbnail if exists, fallback to YouTube
-                                    const thumbnailUrl = item.thumbnail?.[0]?.formats?.thumbnail?.url
-                                        ? `${baseUrl}${item.thumbnail[0].formats.thumbnail.url}`
-                                        : `https://img.youtube.com/vi/${item.youtubeId}/default.jpg`;
+                                    const strapiThumbnail =
+                                        item.thumbnail?.[0]?.formats?.thumbnail?.url || item.thumbnail?.[0]?.url;
 
+                                    const thumbnailUrl = strapiThumbnail
+                                        ? `${baseUrl}${strapiThumbnail.startsWith("/") ? "" : "/"}${strapiThumbnail}`
+                                        : `https://img.youtube.com/vi/${item.youtubeId}/default.jpg`;
 
                                     return (
                                         <div
@@ -82,14 +81,13 @@ console.log(shorts,"shorts")
                                         >
                                             <Image
                                                 src={thumbnailUrl}
-                                                alt={item.title}
-                                                width={64}    // match w-16 = 64px
-                                                height={64}   // match h-16 = 64px
+                                                alt={item.title || "Short Thumbnail"}
+                                                width={64} // matches w-16
+                                                height={64} // matches h-16
                                                 className="object-cover"
                                                 unoptimized
                                             />
                                         </div>
-
                                     );
                                 })}
                         </div>
