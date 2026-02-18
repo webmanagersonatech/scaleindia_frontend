@@ -33,7 +33,7 @@ export default function ShortsSection({ shorts }: Props) {
     //     "5V-VPd-xkSE",
     //     "fG_pUIHUlKQ",
     // ];
-
+console.log(shorts,"shorts")
 
 
     return (
