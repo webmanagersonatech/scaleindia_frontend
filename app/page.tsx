@@ -14,6 +14,9 @@ import LatestBlogsSection from "@/components/home/LatestBlogsSection.component";
 import { getBlogs } from "@/services/server/blogs.server";
 import CallToActionSection from "@/components/common/CallToActionSection.component";
 import { getEvents } from "@/services/server/events.server";
+import ShortsSection from "@/components/home/ShortsSection.component";
+import { getShortsall } from "@/services/server/shorts.server";
+
 
 // ISR: Revalidate every 10 minutes (same as events page)
 export const revalidate = 600;
@@ -23,6 +26,10 @@ const blogsResponse = await getBlogs({
   pageSize: 10, // fetch more, UI will limit
 });
 const blogs = blogsResponse.data; // fetch all blogs
+
+const shorts = await getShortsall();
+
+
 export const metadata: Metadata = {
   title: "SCALE | Home",
   description:
@@ -44,8 +51,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default async  function HomePage() {
- const response = await getEvents({
+export default async function HomePage() {
+  const response = await getEvents({
     page: 1,
     pageSize: 9,
   });
@@ -81,7 +88,10 @@ export default async  function HomePage() {
       <LifeAtScaleSection />
 
       {/* NewsEventsSection section  */}
-      {events.length > 0 && <NewsEventsSection events={events}/>}
+      {events.length > 0 && <NewsEventsSection events={events} />}
+
+      {shorts.length > 0 && <ShortsSection shorts={shorts} />}
+
 
       {/* StudentStoriesSection section  */}
       <StudentStoriesSection />

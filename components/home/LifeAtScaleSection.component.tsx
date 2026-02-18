@@ -111,10 +111,6 @@ opacity-0 group-hover:opacity-100 transition-all duration-500 text-center px-4">
           </div>
         </div>
 
-        {/* Button */}
-        {/* <button className="mt-4 md:mt-12 cursor-pointer bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-md transition">
-          Explore Campus
-        </button> */}
 
       </div>
     </section>
