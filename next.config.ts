@@ -15,6 +15,7 @@ const DEFAULT_REMOTE_PATTERNS: RemotePattern[] = [
   { protocol: "https", hostname: "admin.scaleIndia.in", pathname: "/**" },
   // Add Strapi Cloud support
   { protocol: "https", hostname: "*.media.strapiapp.com", pathname: "/**" },
+  { protocol: "https", hostname: "img.youtube.com", pathname: "/**" },
 ];
 
 const remotePatterns: RemotePattern[] = [...DEFAULT_REMOTE_PATTERNS];
