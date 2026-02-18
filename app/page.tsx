@@ -28,7 +28,6 @@ const blogsResponse = await getBlogs({
 const blogs = blogsResponse.data; // fetch all blogs
 
 const shorts = await getShortsall();
-console.log(shorts,"kk")
 
 
 export const metadata: Metadata = {
