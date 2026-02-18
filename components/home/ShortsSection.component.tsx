@@ -34,6 +34,7 @@ export default function ShortsSection({ shorts }: Props) {
     //     "fG_pUIHUlKQ",
     // ];
 
+    console.log(shorts,"shorts")
 
 
     return (
