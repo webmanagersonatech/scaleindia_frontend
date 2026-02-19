@@ -15,7 +15,7 @@ import { getBlogs } from "@/services/server/blogs.server";
 import CallToActionSection from "@/components/common/CallToActionSection.component";
 import { getEvents } from "@/services/server/events.server";
 import ShortsSection from "@/components/home/ShortsSection.component";
-import { getShortsall } from "@/services/server/shorts.server";
+
 
 
 // ISR: Revalidate every 10 minutes (same as events page)
@@ -27,7 +27,8 @@ const blogsResponse = await getBlogs({
 });
 const blogs = blogsResponse.data; // fetch all blogs
 
-const shorts = await getShortsall();
+
+
 
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default async function HomePage() {
 
   // ✅ IMPORTANT FIX
   const events = response?.data ?? [];
+
   return (
     <div className='min-h-screen bg-white'>
       {/* Hero image section  */}
@@ -89,8 +91,7 @@ export default async function HomePage() {
 
       {/* NewsEventsSection section  */}
       {events.length > 0 && <NewsEventsSection events={events} />}
-
-      {shorts.length > 0 && <ShortsSection shorts={shorts} />}
+      <ShortsSection />
 
 
       {/* StudentStoriesSection section  */}

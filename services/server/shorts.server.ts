@@ -23,7 +23,7 @@ export async function getShorts(params?: {
             $eq: true,
           },
         },
-        sort: ["order:asc"],
+        sort: ["createdAt:desc"], // ✅ changed
         pagination: {
           page: params?.page || 1,
           pageSize: params?.pageSize || 10,
@@ -55,6 +55,7 @@ export async function getShorts(params?: {
     };
   }
 }
+
 export async function getShortsall(): Promise<IShort[]> {
   try {
     const { data } = await axiosInstance.get<IShortsResponse>(

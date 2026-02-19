@@ -2,18 +2,18 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-import { IShort } from "@/types/shorts.types";
+
 import { motion, AnimatePresence } from "framer-motion";
+import { getShortsall } from "@/services/server/shorts.server";
+import { IShort } from "@/types/shorts.types";
 
-interface Props {
-    shorts: IShort[];
-}
 
-export default function ShortsSection({ shorts }: Props) {
+export default function ShortsSection() {
     const [activeVideo, setActiveVideo] = useState<string | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const [shorts, setShorts] = useState<IShort[]>([]);
 
     const scroll = (direction: "left" | "right") => {
         if (!scrollRef.current) return;
@@ -25,7 +25,14 @@ export default function ShortsSection({ shorts }: Props) {
             behavior: "smooth",
         });
     };
-
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getShortsall(); 
+            console.log(data, "shorts data");
+            setShorts(data);
+        }
+        fetchData();
+    }, []);
 
     // const shortse = [
     //     "9VHcNAYMeLA",
@@ -33,7 +40,9 @@ export default function ShortsSection({ shorts }: Props) {
     //     "5V-VPd-xkSE",
     //     "fG_pUIHUlKQ",
     // ];
-    console.log(shorts, "shorts")
+    if (!shorts || shorts.filter((item) => item.isActive).length === 0) {
+        return null;
+    }
 
     const baseUrl = (process.env.NEXT_PUBLIC_STRAPI_URL || "https://admin.scaleindia.in").replace(/\/$/, "");
     return (
