@@ -18,16 +18,26 @@ export default function ShortsSection() {
     const scroll = (direction: "left" | "right") => {
         if (!scrollRef.current) return;
 
-        const cardWidth = scrollRef.current.offsetWidth;
+        const firstCard = scrollRef.current.querySelector(
+            ".short-card"
+        ) as HTMLElement;
+
+        if (!firstCard) return;
+
+        const cardWidth = firstCard.offsetWidth;
+        const gap = 24; // gap-6 = 24px
 
         scrollRef.current.scrollBy({
-            left: direction === "left" ? -cardWidth : cardWidth,
+            left: direction === "left"
+                ? -(cardWidth + gap)
+                : cardWidth + gap,
             behavior: "smooth",
         });
     };
+
     useEffect(() => {
         async function fetchData() {
-            const data = await getShortsall(); 
+            const data = await getShortsall();
             console.log(data, "shorts data");
             setShorts(data);
         }
@@ -159,21 +169,23 @@ export default function ShortsSection() {
                                         key={item.id}
                                         onClick={() => setActiveVideo(item.youtubeId)}
                                         className="
-              relative
-              min-w-full
-              sm:min-w-[48%]
-              lg:min-w-[31%]
-              flex-shrink-0
-              aspect-[9/16]
-              rounded-3xl
-              overflow-hidden
-              bg-black
-              shadow-lg
-              hover:shadow-xl
-              transition
-              cursor-pointer
-              group
-            "
+short-card
+relative
+min-w-full
+sm:min-w-[48%]
+lg:min-w-[31%]
+flex-shrink-0
+aspect-[9/16]
+rounded-3xl
+overflow-hidden
+bg-black
+shadow-lg
+hover:shadow-xl
+transition
+cursor-pointer
+group
+"
+
                                     >
                                         <Image
                                             src={thumbnailUrl}
