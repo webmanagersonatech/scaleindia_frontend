@@ -62,7 +62,13 @@ export default function GlobalPartnershipsSection() {
       image: "/images/palash_gupta.webp",
     },
 
-
+    {
+      id: 11,
+      name: "Parasuraman T. R",
+      location:
+        "Past President, Bangalore Chamber of Industry and Commerce | Past Chairman, Quality Circle Forum of India (Karnataka Chapter) | Past President & Whole-time Director, Toyota Industries Engine India Pvt. Ltd.",
+      image: "/images/parasuraman_tr.webp",
+    },
 
   ];
 
