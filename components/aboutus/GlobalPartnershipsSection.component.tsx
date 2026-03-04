@@ -69,6 +69,12 @@ export default function GlobalPartnershipsSection() {
         "Past President, Bangalore Chamber of Industry and Commerce | Past Chairman, Quality Circle Forum of India (Karnataka Chapter) | Past President & Whole-time Director, Toyota Industries Engine India Pvt. Ltd.",
       image: "/images/parasuraman_tr.webp",
     },
+    {
+      id: 12,
+      name: "Sivakumar C",
+      location: "Founder Partner, Prabha Associates",
+      image: "/images/sivakumar_c.webp",
+    },
 
   ];
 
