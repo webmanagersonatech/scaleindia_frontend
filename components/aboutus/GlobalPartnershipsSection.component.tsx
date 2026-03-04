@@ -42,6 +42,25 @@ export default function GlobalPartnershipsSection() {
         "Product R&D, Engineering, Strategy| GCC Leader| NASSCOM DeepTech| President PMI Bangalore| Board Member & Mentor Startup.",
       image: "/images/palash_gupta.webp",
     },
+    {
+    id: 8,
+    name: "Jagannath Varadaraja Iyengar",
+    location:
+      "IoT and Automation to Sustain Competitiveness | Additive Manufacturing & Hybrid through L-DED",
+    image: "/images/jagannath_varadaraja_iyengar.webp",
+  },
+  {
+    id: 9,
+    name: "Gp. Capt. Vijayakumar VSM",
+    location: "Executive Director, Madras Management Association",
+    image: "/images/gp_capt_vijayakumar.webp",
+  },
+   {
+    id: 10,
+    name: "Rashmikant Joshi",
+    location: "Managing Director, Festo India Private Limited",
+    image: "/images/rashmikant_joshi.webp",
+  },
   ];
 
   // const accreditations = [

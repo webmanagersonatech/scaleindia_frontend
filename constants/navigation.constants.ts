@@ -17,7 +17,7 @@ export const HEADER_SOCIAL_LINKS: ISocialLink[] = [
     iconName: "linkedinIcon",
   },
   { label: "YouTube", href: "https://youtube.com/@scale-blr", iconName: "youtubeIcon" },
-  { label: "X", href: "https://www.instagram.com/scale_blr", iconName: "xlogoIcon" },
+  { label: "X", href: "https://x.com/scale_blr", iconName: "xlogoIcon" },
 ];
 
 export const HEADER_PRIMARY_NAV: INavItem[] = [
@@ -101,7 +101,7 @@ export const FOOTER_SOCIAL_LINKS: ISocialLink[] = [
   },
   { label: "Instagram", href: "https://www.instagram.com/scale_blr", iconName: "instagramIcon" },
   { label: "YouTube", href: "https://youtube.com/@scale-blr", iconName: "youtubeIcon" },
-  { label: "X", href: "https://www.instagram.com/scale_blr", iconName: "xlogoIcon" },
+  { label: "X", href: "https://x.com/scale_blr", iconName: "xlogoIcon" },
 ];
 
 export const FOOTER_LEGAL_LINKS: INavItem[] = [
