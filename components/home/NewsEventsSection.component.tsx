@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-
 interface NewsEventProps {
   events: INormalizedEvent[];
 }
@@ -23,13 +22,40 @@ type MediaFormats = {
   medium?: { url: string };
 };
 
+// SVG Calendar Icon for upcoming badge
+const CalendarIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="mr-1"
+  >
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </svg>
+);
+
 export default function NewsEvent({ events }: NewsEventProps) {
   const latestEvents = events.slice(0, 4);
+  const currentDate = new Date();
 
   // Hide section completely if no events
   if (!latestEvents.length) {
     return null;
   }
+
+  // Check if event is upcoming
+  const isUpcoming = (eventDate: string) => {
+    return new Date(eventDate) > currentDate;
+  };
 
   return (
     <section className="container mx-auto px-6 py-10">
@@ -41,7 +67,6 @@ export default function NewsEvent({ events }: NewsEventProps) {
         <p className="text-gray-600 max-w-3xl mx-auto mb-16">Stay updated with the latest happenings, achievements, and upcoming events at SCALE</p>
       </div>
 
-
       {/* ===== MOBILE CAROUSEL ===== */}
       <div className="md:hidden">
         <Carousel
@@ -52,11 +77,11 @@ export default function NewsEvent({ events }: NewsEventProps) {
             }),
           ]}
         >
-          {/* IMPORTANT: spacing handled here */}
           <CarouselContent className="gap-4 pl-4">
             {latestEvents.map((event, index) => {
               const colorClass =
                 EVENT_CARD_COLORS[index % EVENT_CARD_COLORS.length];
+              const upcoming = isUpcoming(event.eventDate);
 
               const thumbnail = event.thumbnailImage;
               const featured = event.featuredImage;
@@ -73,7 +98,15 @@ export default function NewsEvent({ events }: NewsEventProps) {
               const imageUrl = buildMediaUrl(selectedImage);
 
               return (
-                <CarouselItem key={event.id} className="basis-full">
+                <CarouselItem key={event.id} className="basis-full relative">
+                  {/* Upcoming Badge */}
+                  {upcoming && (
+                    <div className="absolute top-4 right-4 z-10 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                      <CalendarIcon />
+                      UPCOMING
+                    </div>
+                  )}
+
                   <Link
                     href={`/events/${event.slug}`}
                     className="block overflow-hidden rounded-3xl shadow-lg"
@@ -121,13 +154,12 @@ export default function NewsEvent({ events }: NewsEventProps) {
         </Carousel>
       </div>
 
-
-
       {/* ===== DESKTOP 5 COLUMN GRID ===== */}
       <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
         {latestEvents.map((event, index) => {
           const colorClass =
             EVENT_CARD_COLORS[index % EVENT_CARD_COLORS.length];
+          const upcoming = isUpcoming(event.eventDate);
 
           const thumbnail = event.thumbnailImage;
           const featured = event.featuredImage;
@@ -145,47 +177,51 @@ export default function NewsEvent({ events }: NewsEventProps) {
           const imageUrl = buildMediaUrl(selectedImage);
 
           return (
-            <>
+            <div key={event.id} className="md:grid relative">
+              {/* Upcoming Badge */}
+              {upcoming && (
+                <div className="absolute top-4 right-4 z-10 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                  <CalendarIcon />
+                  UPCOMING
+                </div>
+              )}
+
               {/* IMAGE CARD - Only render if image exists */}
-              <div className="md:grid ">
-                {imageUrl && (
-                  <Link
-                    key={`${event.id}-image`}
-                    href={`/events/${event.slug}`}
-                    className="group relative h-[200px] overflow-hidden shadow-lg rounded-t-3xl"
-                  >
-                    <Image
-                      src={imageUrl}
-                      alt={event.title}
-                      fill
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </Link>
-                )}
-
-                {/* CONTENT CARD - Always render */}
+              {imageUrl && (
                 <Link
-                  key={`${event.id}-content`}
                   href={`/events/${event.slug}`}
-                  className={`h-[200px] p-8 flex flex-col rounded-b-3xl justify-center shadow-lg transition-transform duration-500 group-hover:scale-105 ${colorClass}`}
+                  className="group relative h-[200px] overflow-hidden shadow-lg rounded-t-3xl block"
                 >
-                  <div className="flex items-center gap-2 text-sm opacity-80 mb-3">
-                    <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                      <UserCircleIcon size={24} />
-                    </span>
-                    {new Date(event.eventDate).toLocaleDateString("en-IN", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </div>
-
-                  <h3 className="text-lg font-bold leading-snug">
-                    {event.title}
-                  </h3>
+                  <Image
+                    src={imageUrl}
+                    alt={event.title}
+                    fill
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </Link>
-              </div>
-            </>
+              )}
+
+              {/* CONTENT CARD - Always render */}
+              <Link
+                href={`/events/${event.slug}`}
+                className={`h-[200px] p-8 flex flex-col rounded-b-3xl justify-center shadow-lg transition-transform duration-500 hover:scale-105 ${colorClass}`}
+              >
+                <div className="flex items-center gap-2 text-sm opacity-80 mb-3">
+                  <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <UserCircleIcon size={24} />
+                  </span>
+                  {new Date(event.eventDate).toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </div>
+
+                <h3 className="text-lg font-bold leading-snug">
+                  {event.title}
+                </h3>
+              </Link>
+            </div>
           );
         })}
       </div>
