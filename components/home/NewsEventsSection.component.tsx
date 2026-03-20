@@ -99,14 +99,6 @@ export default function NewsEvent({ events }: NewsEventProps) {
 
               return (
                 <CarouselItem key={event.id} className="basis-full relative">
-                  {/* Upcoming Badge */}
-                  {upcoming && (
-                    <div className="absolute top-4 right-4 z-10 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                      <CalendarIcon />
-                      UPCOMING
-                    </div>
-                  )}
-
                   <Link
                     href={`/events/${event.slug}`}
                     className="block overflow-hidden rounded-3xl shadow-lg"
@@ -124,7 +116,15 @@ export default function NewsEvent({ events }: NewsEventProps) {
                     )}
 
                     {/* CONTENT */}
-                    <div className={`p-6 ${colorClass}`}>
+                    <div className={`p-6 relative ${colorClass}`}>
+                      {/* Upcoming Badge - In corner of content card */}
+                      {upcoming && (
+                        <div className="absolute top-4 right-4 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg z-10">
+                          <CalendarIcon />
+                          UPCOMING
+                        </div>
+                      )}
+                      
                       <div className="flex items-center gap-2 text-sm opacity-80 mb-3">
                         <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                           <UserCircleIcon size={24} />
@@ -177,15 +177,7 @@ export default function NewsEvent({ events }: NewsEventProps) {
           const imageUrl = buildMediaUrl(selectedImage);
 
           return (
-            <div key={event.id} className="md:grid relative">
-              {/* Upcoming Badge */}
-              {upcoming && (
-                <div className="absolute top-4 right-4 z-10 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                  <CalendarIcon />
-                  UPCOMING
-                </div>
-              )}
-
+            <div key={event.id} className="md:grid">
               {/* IMAGE CARD - Only render if image exists */}
               {imageUrl && (
                 <Link
@@ -204,8 +196,16 @@ export default function NewsEvent({ events }: NewsEventProps) {
               {/* CONTENT CARD - Always render */}
               <Link
                 href={`/events/${event.slug}`}
-                className={`h-[200px] p-8 flex flex-col rounded-b-3xl justify-center shadow-lg transition-transform duration-500 hover:scale-105 ${colorClass}`}
+                className={`h-[200px] p-8 flex flex-col rounded-b-3xl justify-center shadow-lg transition-transform duration-500 hover:scale-105 relative ${colorClass}`}
               >
+                {/* Upcoming Badge - In corner of content card */}
+                {upcoming && (
+                  <div className="absolute top-4 right-4 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                    <CalendarIcon />
+                    UPCOMING
+                  </div>
+                )}
+                
                 <div className="flex items-center gap-2 text-sm opacity-80 mb-3">
                   <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                     <UserCircleIcon size={24} />
