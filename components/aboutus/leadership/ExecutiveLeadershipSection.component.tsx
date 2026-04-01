@@ -34,14 +34,7 @@ export default function ExecutiveLeadershipSection() {
       description:
         "",
     },
-    {
-      id: 5,
-      image: "/images/mm.webp",
-      name: "G Madan",
-      designation: "HR Manager",
-      description:
-        "",
-    },
+    
 
   ];
 
