@@ -213,9 +213,8 @@ export default function ContactSection() {
               <button
                 type='submit'
                 disabled={isPending}
-                className={`w-full bg-blue-900 text-white rounded-lg py-3 transition ${
-                  isPending ? "opacity-60 cursor-not-allowed" : "hover:bg-blue-800 cursor-pointer"
-                } `}
+                className={`w-full bg-blue-900 text-white rounded-lg py-3 transition ${isPending ? "opacity-60 cursor-not-allowed" : "hover:bg-blue-800 cursor-pointer"
+                  } `}
               >
                 {isPending ? "Sending..." : "Message us"}
               </button>
@@ -239,7 +238,7 @@ export default function ContactSection() {
                   <div>
                     <p className='font-semibold'>Phone</p>
                     <p className='text-sm text-gray-600'>
-                      <a href='tel:+919442592175'>+91 9442592175</a>
+                      <a href='tel:+919442592175'>+91 9442592170</a>
                     </p>
                     <p className='text-xs text-gray-500'>Monday – Friday, 9:00 AM – 6:00 PM IST</p>
                   </div>
@@ -265,7 +264,7 @@ export default function ContactSection() {
                   <div>
                     <p className='font-semibold'>Visit Us</p>
                     <p className='text-sm text-gray-600'>
-                      Sona VT Towers & Estates,
+                      Sona Towers,
                       <br />
                       71 Millers Road, Vasanth Nagar,
                       <br />

@@ -88,8 +88,8 @@ export const FOOTER_INSTITUTIONS: INavItem[] = [
 ];
 
 export const FOOTER_CONTACT_INFO: IFooterContactInfo = {
- address: "Sona VT Towers & Estates, 71 Millers Road, Vasanth Nagar, Bengaluru – 560052, Karnataka, India.",
-  phone: "+91 944 259 2175",
+ address: "Sona Towers, 71 Millers Road, Vasanth Nagar, Bengaluru – 560052, Karnataka, India.",
+  phone: "+91 944 259 2170",
   email: "info@scaleindia.in",
 };
 
