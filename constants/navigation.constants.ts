@@ -88,7 +88,7 @@ export const FOOTER_INSTITUTIONS: INavItem[] = [
 ];
 
 export const FOOTER_CONTACT_INFO: IFooterContactInfo = {
-  address: "#43/1A , Billekempanahalli Village, Bidadi Hobli, Ramnagara Taluk, Karnataka – 562109, India.",
+ address: "Sona VT Towers & Estates, 71 Millers Road, Vasanth Nagar, Bengaluru – 560052, Karnataka, India.",
   phone: "+91 944 259 2175",
   email: "info@scaleindia.in",
 };

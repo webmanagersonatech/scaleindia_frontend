@@ -265,11 +265,13 @@ export default function ContactSection() {
                   <div>
                     <p className='font-semibold'>Visit Us</p>
                     <p className='text-sm text-gray-600'>
-                      #43/1A , Billekempanahalli Village,
+                      Sona VT Towers & Estates,
                       <br />
-                      Bidadi Hobli, Ramnagara Taluk,
+                      71 Millers Road, Vasanth Nagar,
                       <br />
-                      Karnataka – 562109, India.
+                      Bengaluru – 560052,
+                      <br />
+                      Karnataka, India.
                     </p>
                   </div>
                 </div>
