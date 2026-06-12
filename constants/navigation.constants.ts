@@ -5,6 +5,7 @@ export const HEADER_PARTNER_LINKS: INavItem[] = [
   { label: "Sona Business School", href: "https://pgdm.scaleindia.in/" },
   { label: "Sona finishing School", href: "/institutions/sona-finishing-school" },
   { label: "Sona Tech School", href: "/institutions/sona-tech-school" },
+    { label: "Sona UWA (Twinning Program)", href: "https://scaleindia.in/sona-uwa" },
   { label: "AI Consultancy", href: "/institutions/ai-consultancy" },
   { label: "Flexi Staffing", href: "/institutions/sona-flexi-staffing" },
 ];

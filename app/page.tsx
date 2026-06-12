@@ -32,7 +32,7 @@ const blogs = blogsResponse.data; // fetch all blogs
 
 
 export const metadata: Metadata = {
-  title: " Sona - SCALE - Sona Center for Advanced Learning & Entrepreneurship",
+  title: " Sona SCALE - Sona Center for Advanced Learning & Entrepreneurship",
   description:
     "Welcome to SCALE. Explore our programs, placements, and world-class facilities for engineering, technology, and management education.",
   openGraph: {

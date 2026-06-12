@@ -26,7 +26,7 @@ export default function BannerCarousel() {
       ],
       subtitle:
         "A structured 1+1 international pathway designed for future professionals in Data Science, Artificial Intelligence, Machine Learning, Analytics, and emerging technologies.",
-      buttonText: "Know More",
+      buttonText: "Learn More",
       buttonLink: "https://scaleindia.in/sona-uwa",
     },
     {
@@ -60,7 +60,7 @@ export default function BannerCarousel() {
 
   return (
     <div ref={carouselRef} className="w-full mx-auto relative">
-      <Carousel 
+      <Carousel
         className="w-full"
         setApi={(api) => {
           apiRef.current = api;
@@ -87,7 +87,7 @@ export default function BannerCarousel() {
                   <h1 className="font-roboto leading-none font-bold max-w-6xl text-[28px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[72px] space-y-1">
                     {banner.title.map((line, i) => {
                       const isLast = i === banner.title.length - 1;
-                      
+
                       // Handle "Start in India, Complete in the USA" with yellow color and smaller font
                       if (banner.id === 1 && line === "Start in India, Complete in the USA") {
                         return (
@@ -98,7 +98,7 @@ export default function BannerCarousel() {
                           </div>
                         );
                       }
-                      
+
                       if (!isLast) {
                         return <div key={i} className="whitespace-nowrap">{line}</div>;
                       }
