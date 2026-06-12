@@ -88,10 +88,10 @@ export default function BannerCarousel() {
                     {banner.title.map((line, i) => {
                       const isLast = i === banner.title.length - 1;
                       
-                      // Handle "Start in India, Complete in the USA" with yellow color
+                      // Handle "Start in India, Complete in the USA" with yellow color and smaller font
                       if (banner.id === 1 && line === "Start in India, Complete in the USA") {
                         return (
-                          <div key={i} className="text-yellow-400">
+                          <div key={i} className="text-yellow-400 text-[22px] sm:text-[30px] md:text-[38px] lg:text-[45px] xl:text-[54px]">
                             <span className="inline-block break-words whitespace-normal">
                               Start in India, Complete in the USA
                             </span>
