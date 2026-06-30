@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/navigation/Header.component";
 import { Footer } from "@/components/navigation/Footer.component";
 import { AppProviders } from "./providers";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+         <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3BRT50KRDG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3BRT50KRDG');
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background antialiased text-foreground flex flex-col`}
       >
