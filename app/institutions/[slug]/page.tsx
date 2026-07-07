@@ -13,7 +13,7 @@ import { InstitutionPartnerships } from "@/components/institute/InstitutionPartn
 import { InstitutionGallery } from "@/components/institute/InstitutionGallery.component";
 import { InstitutionFaq } from "@/components/institute/InstitutionFaq.component";
 import CallToActionSection from "@/components/common/CallToActionSection.component";
-
+import { InstitutionEvents } from "@/components/institute/InstitutionEvents.component";
 interface InstitutionPageParams {
   slug: string;
 }
@@ -91,7 +91,7 @@ export default async function InstitutionPage({ params }: InstitutionPageProps) 
     // Show error page for other failures
     throw new Error(`Failed to load institution: ${apiError.message}`);
   }
-
+  const isSonaFinishingSchool = slug === 'sona-finishing-school';
   return (
     <div className='min-h-screen bg-background'>
       {/* Main content area */}
@@ -108,7 +108,11 @@ export default async function InstitutionPage({ params }: InstitutionPageProps) 
 
         {/* About section rendered when content is available */}
         <InstitutionAbout institutionId={institution.id} />
-
+        {isSonaFinishingSchool && (
+          <InstitutionEvents
+            titlePrefix="Events"
+          />
+        )}
         {/* Programs section showcasing institution offerings */}
         <InstitutionPrograms institutionId={institution.id} />
 
@@ -120,6 +124,9 @@ export default async function InstitutionPage({ params }: InstitutionPageProps) 
 
         {/* Key Highlights section highlighting specific advantages */}
         <InstitutionKeyHighlights institutionId={institution.id} />
+
+
+
 
         {/* Testimonials section */}
         <InstitutionTestimonials testimonialSection={institution.testimonialSection || null} />

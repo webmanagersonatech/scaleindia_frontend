@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -13,8 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function BannerCarousel() {
-  const [api, setApi] = useState<CarouselApi>(); // Use state instead of ref
-  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const [api, setApi] = useState<CarouselApi>();
 
   const banners = [
     {
@@ -44,58 +43,20 @@ export default function BannerCarousel() {
     },
   ];
 
-  const stopAutoplay = useCallback(() => {
-    if (autoplayRef.current) {
-      clearInterval(autoplayRef.current);
-      autoplayRef.current = null;
-    }
-  }, []);
-
-  const startAutoplay = useCallback(() => {
-    stopAutoplay();
-
-    if (!api || banners.length <= 1) return;
-
-    autoplayRef.current = setInterval(() => {
-      api.scrollNext();
-    }, 8000);
-  }, [api, banners.length, stopAutoplay]);
-
-  // Set up autoplay when API becomes available
-  useEffect(() => {
-    if (!api || banners.length <= 1) return;
-
-    startAutoplay();
-
-    const handleSelect = () => {
-      // Reset autoplay timer on manual navigation
-      if (api && banners.length > 1) {
-        startAutoplay();
-      }
-    };
-
-    api.on("select", handleSelect);
-
-    return () => {
-      api.off("select", handleSelect);
-      stopAutoplay();
-    };
-  }, [api, banners.length, startAutoplay, stopAutoplay]);
-
   return (
-    <div className="w-full mx-auto relative">
+    <div className="w-full mx-auto relative overflow-hidden">
       <Carousel
         className="w-full"
-        setApi={setApi} // Use setApi directly
+        setApi={setApi}
         opts={{
           loop: true,
           align: "start",
         }}
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-0"> {/* Remove default margin */}
           {banners.map((banner) => (
-            <CarouselItem key={banner.id}>
-              <div className="relative w-full h-[543px]">
+            <CarouselItem key={banner.id} className="pl-0"> {/* Remove padding */}
+              <div className="relative w-full h-[543px] overflow-hidden">
                 <Image
                   src={banner.image}
                   alt={banner.title.join(" ")}
