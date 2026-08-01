@@ -20,14 +20,14 @@ export default function InstitutionsSection() {
       image: "/images/gcc.webp",
       link: "/institutions/sona-gcc",
     },
-    {
-      id: 2,
-      title: "Sona School of Business & Management",
-      description:
-        "India's tech-powered school for globally conscious business leaders.",
-      image: "/images/sona_business_school.webp",
-      link: "https://www.sonabusinessschool.com/",
-    },
+    // {
+    //   id: 2,
+    //   title: "Sona School of Business & Management",
+    //   description:
+    //     "India's tech-powered school for globally conscious business leaders.",
+    //   image: "/images/sona_business_school.webp",
+    //   link: "https://www.sonabusinessschool.com/",
+    // },
     {
       id: 3,
       title: "Sona Tech School",

@@ -2,7 +2,7 @@ import type { IFooterContactInfo, INavGroup, INavItem, ISocialLink } from "@/typ
 
 export const HEADER_PARTNER_LINKS: INavItem[] = [
   { label: "GCC", href: "/institutions/sona-gcc" },
-  { label: "Sona Business School", href: "https://www.sonabusinessschool.com/" },
+  // { label: "Sona Business School", href: "https://www.sonabusinessschool.com/" },
   { label: "Sona finishing School", href: "/institutions/sona-finishing-school" },
   { label: "Sona Tech School", href: "/institutions/sona-tech-school" },
     { label: "Sona-UWA International Pathway", href: "https://scaleindia.in/sona-uwa" },
@@ -81,7 +81,7 @@ export const FOOTER_QUICK_LINKS: INavItem[] = [
 
 export const FOOTER_INSTITUTIONS: INavItem[] = [
   { label: "GCC", href: "/institutions/sona-gcc" },
-  { label: "Sona Business School", href: "https://www.sonabusinessschool.com/ " },
+  // { label: "Sona Business School", href: "https://www.sonabusinessschool.com/ " },
   { label: "Sona Finishing School", href: "/institutions/sona-finishing-school" },
   { label: "Sona Tech School", href: "/institutions/sona-tech-school" },
   { label: "AI Consultancy", href: "/institutions/ai-consultancy" },
