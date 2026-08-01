@@ -26,7 +26,7 @@ export default function InstitutionsSection() {
       description:
         "India's tech-powered school for globally conscious business leaders.",
       image: "/images/sona_business_school.webp",
-      link: "https://pgdm.scaleindia.in/",
+      link: "https://www.sonabusinessschool.com/",
     },
     {
       id: 3,
