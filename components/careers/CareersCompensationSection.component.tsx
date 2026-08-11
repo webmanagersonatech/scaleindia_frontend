@@ -28,53 +28,61 @@ const PHILOSOPHY_PILLARS = [
 
 export default function CareersCompensationSection() {
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-6 md:px-8">
+    <section className="bg-white pb-12">
+      <div className="container mx-auto px-6 md:px-8 max-w-7xl">
         <SectionHeader
           titlePrefix="Our"
           titleHighlight="Compensation Philosophy"
         />
-        <p className="mt-4 text-center text-slate-600 max-w-2xl mx-auto text-base md:text-lg">
+        <p className="mt-3 text-center text-slate-600 max-w-3xl mx-auto text-sm md:text-base">
           Our compensation includes fixed + variable pay, with performance-linked incentives
           connected to:
         </p>
 
-        {/* Performance-linked incentives */}
-        <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {PERFORMANCE_LINKS.map(({ icon: Icon, label }) => (
-            <div
-              key={label}
-              className="flex flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-600">
-                <Icon size={22} />
-              </span>
-              <p className="font-semibold text-slate-900">{label}</p>
+        <div className="mt-8 grid md:grid-cols-2 gap-8">
+          {/* Left Column - Performance Metrics */}
+          <div className="bg-slate-50  p-6">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-4">
+              Performance-Linked Incentives
+            </h3>
+
+            <div className="grid grid-cols-2 gap-3">
+              {PERFORMANCE_LINKS.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                  <Icon size={16} className="text-amber-500 flex-shrink-0" />
+                  <span className="text-slate-700 text-sm font-medium">
+                    {label}
+        </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Right Column - Philosophy Pillars */}
+          <div className="bg-slate-50  p-6">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-700 mb-4">
+              Our Philosophy
+            </h3>
+
+            <div className="space-y-2.5">
+              {PHILOSOPHY_PILLARS.map(({ icon: Icon, prefix, suffix }) => (
+                <div key={prefix} className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                  <Icon size={16} className="text-amber-500 flex-shrink-0" />
+                  <div className="text-xs">
+                    <span className="font-bold text-slate-800 tracking-wide">
+                      {prefix}
+                    </span>
+                    <span className="text-slate-600 ml-1">
+                      {suffix}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Philosophy statement */}
-        <div className="mt-16 text-center">
-          <p className="text-slate-500 uppercase tracking-wide text-sm font-semibold">
-            Built on a strong foundation and a rich history, our philosophy remains simple
-          </p>
-        </div>
-
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {PHILOSOPHY_PILLARS.map(({ icon: Icon, prefix, suffix }) => (
-            <div
-              key={prefix}
-              className="flex flex-col items-center gap-3 rounded-2xl bg-slate-900 p-6 text-center"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-400 text-slate-900">
-                <Icon size={22} />
-              </span>
-              <p className="font-bold text-amber-400 tracking-wide">{prefix}</p>
-              <p className="text-sm text-white/80 leading-relaxed">{suffix}</p>
-            </div>
-          ))}
-        </div>
+    
       </div>
     </section>
   );
