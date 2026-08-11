@@ -5,7 +5,7 @@ export const HEADER_PARTNER_LINKS: INavItem[] = [
   // { label: "Sona Business School", href: "https://www.sonabusinessschool.com/" },
   { label: "Sona finishing School", href: "/institutions/sona-finishing-school" },
   { label: "Sona Tech School", href: "/institutions/sona-tech-school" },
-    { label: "Sona-UWA International Pathway", href: "https://scaleindia.in/sona-uwa" },
+  { label: "Sona-UWA International Pathway", href: "https://scaleindia.in/sona-uwa" },
   { label: "AI Consultancy", href: "/institutions/ai-consultancy" },
   { label: "Flexi Staffing", href: "/institutions/sona-flexi-staffing" },
 ];
@@ -26,6 +26,7 @@ export const HEADER_PRIMARY_NAV: INavItem[] = [
   { label: "Life @ SCALE", href: "/life-at-scale" },
   // { label: "Case Studies", href: "/case-studies" },
   { label: "Placements", href: "/placements" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -76,6 +77,7 @@ export const FOOTER_QUICK_LINKS: INavItem[] = [
   { label: "Events & News", href: "/events" },
   { label: "Blogs", href: "/blogs" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -89,7 +91,7 @@ export const FOOTER_INSTITUTIONS: INavItem[] = [
 ];
 
 export const FOOTER_CONTACT_INFO: IFooterContactInfo = {
- address: "Sona Towers, 71 Millers Road, Vasanth Nagar, Bengaluru – 560052, Karnataka, India.",
+  address: "Sona Towers, 71 Millers Road, Vasanth Nagar, Bengaluru – 560052, Karnataka, India.",
   phone: "+91 944 259 2170",
   email: "info@scaleindia.in",
 };
