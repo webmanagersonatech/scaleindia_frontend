@@ -34,7 +34,7 @@ export default function InstitutionsSection() {
       description:
         "Day-one-ready talent for global technology ecosystems.",
       image: "/images/sona_tech_school.webp",
-      link: "/institutions/sona-tech-school",
+      link: "https://tech-school.scaleindia.in",
     },
     {
       id: 4,

@@ -4,7 +4,7 @@ export const HEADER_PARTNER_LINKS: INavItem[] = [
   { label: "GCC", href: "/institutions/sona-gcc" },
   // { label: "Sona Business School", href: "https://www.sonabusinessschool.com/" },
   { label: "Sona finishing School", href: "/institutions/sona-finishing-school" },
-  { label: "Sona Tech School", href: "/institutions/sona-tech-school" },
+  { label: "Sona Tech School", href: "https://tech-school.scaleindia.in" },
   { label: "Sona-UWA International Pathway", href: "https://scaleindia.in/sona-uwa" },
   { label: "AI Consultancy", href: "/institutions/ai-consultancy" },
   { label: "Flexi Staffing", href: "/institutions/sona-flexi-staffing" },
@@ -85,7 +85,7 @@ export const FOOTER_INSTITUTIONS: INavItem[] = [
   { label: "GCC", href: "/institutions/sona-gcc" },
   // { label: "Sona Business School", href: "https://www.sonabusinessschool.com/ " },
   { label: "Sona Finishing School", href: "/institutions/sona-finishing-school" },
-  { label: "Sona Tech School", href: "/institutions/sona-tech-school" },
+  { label: "Sona Tech School", href: "https://tech-school.scaleindia.in" },
   { label: "AI Consultancy", href: "/institutions/ai-consultancy" },
   { label: "Flexi Staffing", href: "/institutions/sona-flexi-staffing" },
 ];
