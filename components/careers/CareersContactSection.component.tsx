@@ -42,7 +42,7 @@ export default function CareersContactSection() {
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-white text-yellow-700 font-semibold px-8 py-3 rounded-md shadow hover:bg-gray-100 transition"
           >
-            Apply Now
+            Post Your Resume
             <ArrowRight size={20} />
           </Link>
         </div>
