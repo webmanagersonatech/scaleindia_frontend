@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Mail, ArrowRight, Phone } from "lucide-react";
 
 export default function CareersContactSection() {
   return (
@@ -34,6 +34,16 @@ export default function CareersContactSection() {
           >
             <Phone size={20} />
             94425 92132
+          </Link>
+
+          <Link
+            href="https://www.sonastar.com/career1/jobs/WEB-004"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-white text-yellow-700 font-semibold px-8 py-3 rounded-md shadow hover:bg-gray-100 transition"
+          >
+            Apply Now
+            <ArrowRight size={20} />
           </Link>
         </div>
       </div>
