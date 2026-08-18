@@ -27,16 +27,16 @@ function CurrentOpeningsSection() {
       experience: "Minimum 7 years of experience",
       description:
         "Lead Back-of-House planning, operations, SOPs and team development.",
-  
+
     },
 
-     {
+    {
       icon: ChefHat,
       title: "Back of House (BoH) Consultant",
       experience: "Minimum 7 years of experience",
       description:
         "Provide strategic consulting on BoH design, operations, standards and optimization.",
-    
+
     },
     {
       icon: Boxes,
@@ -92,14 +92,25 @@ function CurrentOpeningsSection() {
 
         {/* Team Leader roles */}
         <div className="mt-10">
-          <div className="mb-6">
-            <span className="inline-block rounded-full bg-amber-500 px-4 py-1.5 text-sm md:text-base font-bold text-white">
+
+          <div className="mb-6 flex items-center justify-between gap-4">
+            {/* Left */}
+            <span className="inline-block rounded-lg bg-amber-500 px-4 py-1.5 text-sm md:text-base font-bold text-white">
               Team Leaders — MEP | BOH | BIM
             </span>
+
+            {/* Right */}
+            <a
+              href="https://www.sonastar.com/career1/jobs/WEB-004"
+              target="_blank"
+              className="inline-flex items-center rounded-lg border-2 border-amber-500 px-5 py-2 text-sm md:text-base font-bold text-amber-500 transition hover:bg-amber-500 hover:text-white"
+            >
+              Post Your Resume
+            </a>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            {roles.map(({ icon: Icon, title, experience, description,  }) => (
+            {roles.map(({ icon: Icon, title, experience, description, }) => (
               <div
                 key={title}
                 className="rounded-2xl border border-slate-200 p-6 flex flex-col gap-3"
@@ -111,13 +122,13 @@ function CurrentOpeningsSection() {
                 <p className="text-sm font-semibold text-amber-600">{experience}</p>
                 <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
 
-             
+
               </div>
             ))}
           </div>
         </div>
 
-           <hr className="border-slate-200 mt-12" />
+        <hr className="border-slate-200 mt-12" />
       </div>
     </section>
   );
