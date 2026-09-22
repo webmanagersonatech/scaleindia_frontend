@@ -99,10 +99,28 @@ function FooterContact() {
           <Icon name='phone' className='size-4 shrink-0' />
           <span>{FOOTER_CONTACT_INFO.phone}</span>
         </a>
-        <a href={`mailto:${FOOTER_CONTACT_INFO.email}`} className='flex items-center gap-2 transition hover:text-white'>
-          <span>✉</span>
-          <span>{FOOTER_CONTACT_INFO.email}</span>
-        </a>
+       <a
+  href={`mailto:${FOOTER_CONTACT_INFO.email}`}
+  className="flex items-center gap-2 transition hover:text-white"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    className="h-4 w-4 shrink-0"
+  >
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path
+      d="m3 7 7.4 5.55a2.7 2.7 0 0 0 3.2 0L21 7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+
+  <span>{FOOTER_CONTACT_INFO.email}</span>
+</a>
       </div>
     </div>
   );
