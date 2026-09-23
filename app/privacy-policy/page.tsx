@@ -113,10 +113,9 @@ const sections: LegalSection[] = [
         </p>
         <ul>
           <li>
-            With group institutions under Sona Valliappa Group (such as Sona
-            GCC, Sona Finishing School, Sona Tech School, and Sona Flexi
-            Staffing) to fulfil the purpose for which you shared the
-            information;
+            With group verticals under Sona Valliappa Group (such as Sona GCC,
+            Sona Finishing School, Sona Tech School, and Sona Flexi Staffing)
+            to fulfil the purpose for which you shared the information;
           </li>
           <li>
             With trusted service providers who help us operate our website,
