@@ -74,7 +74,8 @@ export default async function HomePage() {
 
       {/* Lagacy Section  */}
       <LegacySection />
-
+      {/* NewsEventsSection section  */}
+      {events.length > 0 && <NewsEventsSection events={events} />}
       {/* Why Choose Us  */}
       <div className='why-scale-page'>
         <WhyChooseSection />
@@ -89,8 +90,7 @@ export default async function HomePage() {
       {/* LifeAtScaleSection section  */}
       <LifeAtScaleSection />
 
-      {/* NewsEventsSection section  */}
-      {events.length > 0 && <NewsEventsSection events={events} />}
+
       <ShortsSection />
 
 
