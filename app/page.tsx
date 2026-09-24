@@ -15,6 +15,7 @@ import { getBlogs } from "@/services/server/blogs.server";
 import CallToActionSection from "@/components/common/CallToActionSection.component";
 import { getEvents } from "@/services/server/events.server";
 import ShortsSection from "@/components/home/ShortsSection.component";
+import EventPopup from "@/components/home/EventPopup.component";
 
 
 
@@ -63,6 +64,9 @@ export default async function HomePage() {
 
   return (
     <div className='min-h-screen bg-white'>
+
+      <EventPopup/>
+
       {/* Hero image section  */}
       <HeroCarousel />
 
