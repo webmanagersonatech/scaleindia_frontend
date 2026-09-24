@@ -124,7 +124,7 @@ export default function NewsEvent({ events }: NewsEventProps) {
                           UPCOMING
                         </div>
                       )}
-                      
+
                       <div className="flex items-center gap-2 text-sm opacity-80 mb-3">
                         <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                           <UserCircleIcon size={24} />
@@ -196,28 +196,30 @@ export default function NewsEvent({ events }: NewsEventProps) {
               {/* CONTENT CARD - Always render */}
               <Link
                 href={`/events/${event.slug}`}
-                className={`h-[200px] p-8 flex flex-col rounded-b-3xl justify-center shadow-lg transition-transform duration-500 hover:scale-105 relative ${colorClass}`}
+                className={`h-[200px] px-8 pb-8 pt-14 flex flex-col rounded-b-3xl justify-center shadow-lg transition-transform duration-500 hover:scale-105 relative overflow-hidden ${colorClass}`}
               >
                 {/* Upcoming Badge - In corner of content card */}
                 {upcoming && (
-                  <div className="absolute top-4 right-4 flex items-center bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-yellow-500 text-black text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
                     <CalendarIcon />
                     UPCOMING
                   </div>
                 )}
-                
-                <div className="flex items-center gap-2 text-sm opacity-80 mb-3">
-                  <span className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+
+                <div className="flex items-center gap-2 text-sm opacity-80 mb-3 min-w-0">
+                  <span className="w-10 h-10 shrink-0 rounded-full bg-white/20 flex items-center justify-center">
                     <UserCircleIcon size={24} />
                   </span>
-                  {new Date(event.eventDate).toLocaleDateString("en-IN", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
+                  <span className="whitespace-nowrap truncate">
+                    {new Date(event.eventDate).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </span>
                 </div>
 
-                <h3 className="text-lg font-bold leading-snug">
+                <h3 className="text-lg font-bold leading-snug line-clamp-2 break-words">
                   {event.title}
                 </h3>
               </Link>
